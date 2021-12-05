@@ -1,5 +1,7 @@
 #include<stdio.h>
 
+// komentarz Kacper
+
 int main()
 {
   int i, j, k, n;

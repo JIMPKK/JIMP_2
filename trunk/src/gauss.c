@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-// komentarz Kacper
+
+// Komentarz Kuba
 
 int main()
 {

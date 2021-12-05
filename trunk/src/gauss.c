@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+// Komentarz Kuba
 int main()
 {
   int i, j, k, n;

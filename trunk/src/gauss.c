@@ -1,8 +1,17 @@
-#include<stdio.h>
+#include "gauss.h"
 
+/**
+ * Zwraca 0 - elimnacja zakonczona sukcesem
+ * Zwraca 1 - macierz osobliwa - dzielenie przez 0
+ */
+int eliminate(Matrix *mat, Matrix *b){
+    /**
+  	 * Tutaj należy umieścić właściwą implemntację.
+		 */
 
-// Komentarz Kuba
-
+		return 0;
+}
+/*
 int main()
 {
   int i, j, k, n;
@@ -16,7 +25,7 @@ int main()
       scanf("%f", & A[i][j]);
     }
   }
-  for (j = 1; j <= n; j++) /* loop for the generation of upper triangular matrix*/ {
+  for (j = 1; j <= n; j++) /* loop for the generation of upper triangular matrix {
     for (i = 1; i <= n; i++) {
       if (i > j) {
         c = A[i][j] / A[j][j];
@@ -27,7 +36,7 @@ int main()
     }
   }
   x[n] = A[n][n + 1] / A[n][n];
-  /* this loop is for backward substitution*/
+   this loop is for backward substitution
   for (i = n - 1; i >= 1; i--) {
     sum = 0;
     for (j = i + 1; j <= n; j++) {
@@ -37,7 +46,8 @@ int main()
   }
   printf("\nThe solution is: \n");
   for (i = 1; i <= n; i++) {
-    printf("\nx%d=%f\n", i, x[i]); /* x1, x2, x3 are the required solutions*/
+    printf("\nx%d=%f\n", i, x[i]); x1, x2, x3 are the required solutions
   }
   return (0);
 }
+*/

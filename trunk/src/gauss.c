@@ -10,7 +10,7 @@ int gauss(Matrix* mat, Matrix* b, Matrix* x){
   }
   for (int i = 0; i <= n; i++){
     int j = n+1;
-    A[i][j] = b[i][j];
+    A[i][1] = b[i][j];
   }
 
   int n = x->r;
@@ -32,7 +32,7 @@ int gauss(Matrix* mat, Matrix* b, Matrix* x){
    }
    for (int i = 0; i <= n; i++){
      int j = n+1;
-     b[i][j] = A[i][j];
+     b[i][j] = A[i][1];
    }
 
    return 0;

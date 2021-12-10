@@ -10,10 +10,10 @@ int gauss(Matrix* mat, Matrix* b, Matrix* x){
   }
   for (int i = 0; i <= n; i++){
     int j = n+1;
-    A[i][j] = b[i][1];
+    A[i][j] = b[i][j];
   }
 
-
+  int n = x->r;
   for (j = 0; j <= n; j++) /* pętla, która tworzy macierz trójkątną*/ {
      for (i = 0; i <= n; i++) {
        if (i > j) {
@@ -24,7 +24,7 @@ int gauss(Matrix* mat, Matrix* b, Matrix* x){
        }
      }
    }
-
+   
    for (int i = 0; i <= n; i++) { // przepisanie z nowego matrixa do starych
      for (int j = 0; j <= n; j++) {
        mat[i][j] = A[i][j];
@@ -32,7 +32,7 @@ int gauss(Matrix* mat, Matrix* b, Matrix* x){
    }
    for (int i = 0; i <= n; i++){
      int j = n+1;
-     b[i][1] = A[i][j];
+     b[i][j] = A[i][j];
    }
 
    return 0;

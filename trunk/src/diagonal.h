@@ -11,9 +11,10 @@ innych wierszy na i-tym miejscu.
 */
 void element(Matrix *mat, Matrix *b, int i);
 
-
 /*
-Funkcja zamienia miejscami dwa wiersze (i oraz j)
+Zamiana miejscami dwóch wierszy w macierzach:
+A, oraz macierzy B.
+Zamieniane są i-ty wiersz z j-tym wierszem.
 */
 void swap(Matrix *mat, Matrix *b, int i, int j);
 

@@ -1,39 +1,22 @@
-int gauss(Matrix* mat, Matrix* b, Matrix* x){
-  if (mat->c != mat->r || mat->r != b->r) return 1;
+#include "gauss.h"
 
-  int n = x->r; // tworzymy nowy matrix
-  double A[20][20];
-  for (int i = 0; i <= n; i++) {
-    for (int j =0; j <= n; j++) {
-      A[i][j] = mat[i][j];
+/**
+ * Zwraca 0 - elimnacja zakonczona sukcesem
+ * Zwraca 1 - macierz osobliwa - dzielenie przez 0
+ */
+int eliminate(Matrix *mat, Matrix *b){
+  double temp;
+  int s;
+  for (int r = 0; r < mat->r-1; r++){
+    if (mat->data[r][r] == 0) return 1;
+
+    for (int c = r+1; c < mat->c; c++){
+      temp = mat->data[c][r] / mat->data[r][r];
+      for (s = 0; s < mat->c; s++){
+        mat->data[c][s] =  mat->data[c][s] - temp*mat->data[r][s];
+      }
+      b->data[c][0] = b->data[c][0] -  temp*b->data[r][0];
     }
   }
-  for (int i = 0; i <= n; i++){
-    int j = n+1;
-    A[i][1] = b[i][j];
-  }
-
-  int n = x->r;
-  for (j = 0; j <= n; j++) /* pętla, która tworzy macierz trójkątną*/ {
-     for (i = 0; i <= n; i++) {
-       if (i > j) {
-         c = A[i][j] / A[j][j];
-         for (k = 0; k <= n + 1; k++) {
-           A[i][k] = A[i][k] - c * A[j][k];
-         }
-       }
-     }
-   }
-   
-   for (int i = 0; i <= n; i++) { // przepisanie z nowego matrixa do starych
-     for (int j = 0; j <= n; j++) {
-       mat[i][j] = A[i][j];
-     }
-   }
-   for (int i = 0; i <= n; i++){
-     int j = n+1;
-     b[i][j] = A[i][1];
-   }
-
-   return 0;
- }
+  return 0;
+}

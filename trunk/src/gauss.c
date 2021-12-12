@@ -1,4 +1,5 @@
 #include "gauss.h"
+#include "diagonal.h"
 
 /**
  * Zwraca 0 - elimnacja zakonczona sukcesem
@@ -8,7 +9,7 @@ int eliminate(Matrix *mat, Matrix *b){
   double temp;
   int s;
   for (int r = 0; r < mat->r-1; r++){
-    if (mat->data[r][r] == 0) return 1;
+    if (mat->data[r][r] == 0) element(mat, b, r);
 
     for (int c = r+1; c < mat->c; c++){
       temp = mat->data[c][r] / mat->data[r][r];

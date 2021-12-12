@@ -13,7 +13,7 @@ void element(Matrix *mat, Matrix *b, int i);
 
 
 /*
-Zamiana miejscami i-tego wiersza z j-tym wierszem
+Funkcja zamienia miejscami dwa wiersze (i oraz j)
 */
 void swap(Matrix *mat, Matrix *b, int i, int j);
 
